@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Early Ransomware Detection Using Network Traffic and Machine Learning
 
 ## Project Overview
@@ -88,3 +89,6 @@ Email / LinkedIn: sanchitakulkarni28@gmail.com
 
 # Early-Ransomware-Detection-
 Early Ransomware Detection using Network Traffic &amp; ML
+=======
+# ransomware-detection-dashboard-Project
+>>>>>>> a887160358b557516a77d0cfb398baa5d402e55c
