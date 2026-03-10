@@ -6,26 +6,34 @@ import time
 # -----------------------------
 # Detection Thresholds
 # -----------------------------
-CPU_THRESHOLD = 85
-PROCESS_BURST_THRESHOLD = 20
+CPU_THRESHOLD = 40
+PROCESS_BURST_THRESHOLD = 6
 PROCESS_BURST_WINDOW = 5
 
 # -----------------------------
-# Real Ransomware Commands
+# Ransomware Command Patterns
 # -----------------------------
 SUSPICIOUS_COMMANDS = [
-    "vssadmin delete shadows",
-    "wmic shadowcopy delete",
-    "bcdedit /set",
-    "wbadmin delete catalog",
-    "cipher /w",
-    "powershell -enc"
+    "vssadmin",
+    "shadowcopy",
+    "bcdedit",
+    "wbadmin",
+    "cipher",
+    "powershell",
+    "-enc",
+    "encodedcommand"
 ]
 
 # -----------------------------
 # Suspicious Script Hosts
 # -----------------------------
-SCRIPT_HOSTS = ["powershell.exe", "cmd.exe", "wscript.exe", "cscript.exe"]
+SCRIPT_HOSTS = [
+    "powershell.exe",
+    "cmd.exe",
+    "wscript.exe",
+    "cscript.exe",
+    "python.exe"
+]
 
 # -----------------------------
 # Trusted Processes
@@ -41,8 +49,7 @@ TRUSTED_PROCESSES = [
     "teams.exe",
     "code.exe",
     "dwm.exe",
-    "wmiprvse.exe",
-    "notepad.exe"
+    "wmiprvse.exe"
 ]
 
 # -----------------------------
@@ -56,6 +63,7 @@ DOWNLOAD_PATH = os.path.join(os.path.expanduser("~"), "downloads").lower()
 # Logging Setup
 # -----------------------------
 LOG_FILE = "monitoring/logs/process_system.log"
+
 os.makedirs("monitoring/logs", exist_ok=True)
 
 logging.basicConfig(
@@ -82,12 +90,14 @@ def alert(msg):
 # Detection Engine
 # -----------------------------
 def detect_ransomware_behavior():
-    global spawn_times
 
+    global spawn_times
     current_time = time.time()
 
-    for proc in psutil.process_iter(['pid','name','exe','cmdline','ppid']):
+    for proc in psutil.process_iter(['pid', 'name', 'exe', 'cmdline', 'ppid']):
+
         try:
+
             pid = proc.info['pid']
             name = proc.info['name']
 
@@ -104,48 +114,64 @@ def detect_ransomware_behavior():
             cmdline = proc.info.get('cmdline')
             cmd = " ".join(cmdline).lower() if cmdline else ""
 
-            # -----------------------------
-            # Detect Shadow Copy Deletion
-            # -----------------------------
+            # --------------------------------
+            # Log monitored process
+            # --------------------------------
+            logging.info(f"Monitoring process: {name} | PID={pid}")
+
+            # --------------------------------
+            # Detect suspicious commands
+            # --------------------------------
             for keyword in SUSPICIOUS_COMMANDS:
                 if keyword in cmd:
                     alert(f"Possible ransomware command detected: {name} -> {cmd}")
+                    break
 
-            # -----------------------------
-            # Suspicious Script Execution
-            # -----------------------------
-            if name in SCRIPT_HOSTS:
-                if exe:
-                    path = exe.lower()
-                    if TEMP_PATH in path or DOWNLOAD_PATH in path:
+            # --------------------------------
+            # Suspicious execution location
+            # --------------------------------
+            if exe:
+
+                path = exe.lower()
+
+                if name in SCRIPT_HOSTS:
+
+                    if TEMP_PATH in path or APPDATA_PATH in path or DOWNLOAD_PATH in path:
                         alert(f"Script host running from suspicious location: {exe}")
 
-            # -----------------------------
-            # Process Burst Detection
-            # -----------------------------
+            # --------------------------------
+            # Process burst detection
+            # --------------------------------
             if pid not in seen_processes:
+
                 seen_processes.add(pid)
                 spawn_times.append(current_time)
 
             spawn_times = [t for t in spawn_times if current_time - t < PROCESS_BURST_WINDOW]
 
             if len(spawn_times) > PROCESS_BURST_THRESHOLD:
-                alert(f"Process burst detected: {len(spawn_times)} processes spawned in {PROCESS_BURST_WINDOW}s")
+
+                alert(f"Process burst detected: {len(spawn_times)} processes in {PROCESS_BURST_WINDOW}s")
+
                 spawn_times.clear()
 
-            # -----------------------------
-            # High CPU Encryption Detection
-            # -----------------------------
-            cpu = proc.cpu_percent(interval=0.2)
+            # --------------------------------
+            # High CPU usage detection
+            # --------------------------------
+            cpu = proc.cpu_percent(interval=0.1)
 
             if cpu > CPU_THRESHOLD and pid not in cpu_alerted:
+
                 alert(f"High CPU usage suspicious process: {name} using {cpu:.1f}% CPU")
+
                 cpu_alerted.add(pid)
 
             if cpu <= CPU_THRESHOLD and pid in cpu_alerted:
+
                 cpu_alerted.remove(pid)
 
         except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+
             continue
 
 
@@ -161,5 +187,7 @@ if __name__ == "__main__":
         seen_processes.add(proc.pid)
 
     while True:
+
         detect_ransomware_behavior()
-        time.sleep(2)
+
+        time.sleep(0.5)

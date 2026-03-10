@@ -1,6 +1,7 @@
 import subprocess
 import time
 import os
+import base64
 
 print("Starting safe ransomware behavior demo...")
 
@@ -16,6 +17,7 @@ for i in range(6):
     burst_procs.append(p)
     time.sleep(0.5)
 
+
 # ------------------------------------------------
 # 2. High CPU Usage Simulation
 # ------------------------------------------------
@@ -24,19 +26,25 @@ print("Simulating high CPU usage...")
 cpu_proc = subprocess.Popen([
     "python",
     "-c",
-    "import time; [sum([i*i for i in range(10000000)]) for _ in range(15)]; time.sleep(5)"
+    "import time; [sum([i*i for i in range(10000000)]) for _ in range(20)]; time.sleep(5)"
 ])
 
+
 # ------------------------------------------------
-# 3. Suspicious PowerShell Behavior
+# 3. Encoded PowerShell (Ransomware-like)
 # ------------------------------------------------
-print("Simulating suspicious PowerShell command...")
+print("Simulating encoded PowerShell...")
+
+command = "Write-Host 'Suspicious activity simulation'"
+
+encoded = base64.b64encode(command.encode("utf-16le")).decode()
 
 powershell_proc = subprocess.Popen([
     "powershell",
-    "-Command",
-    "Write-Host 'Simulating suspicious activity'"
+    "-EncodedCommand",
+    encoded
 ])
+
 
 # ------------------------------------------------
 # 4. Suspicious Execution Location
@@ -51,16 +59,18 @@ with open(test_script, "w") as f:
     f.write("""
 import time
 while True:
-    time.sleep(1)
+    x = sum([i*i for i in range(100000)])
 """)
 
 location_proc = subprocess.Popen(["python", test_script])
 
+
 # ------------------------------------------------
-# Wait so monitor detects everything
+# Wait for monitor detection
 # ------------------------------------------------
 print("Waiting for monitor alerts...")
-time.sleep(12)
+time.sleep(15)
+
 
 # ------------------------------------------------
 # Cleanup
