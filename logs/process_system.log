@@ -1,0 +1,243 @@
+2026-04-13 21:05:06 [PROCESS ALERT] [T1486] High CPU usage: msedgewebview2.exe (PID=30616) at 57.8% — possible encryption activity
+2026-04-13 21:05:06,066 WARNING [T1486] High CPU usage: msedgewebview2.exe (PID=30616) at 57.8% — possible encryption activity
+2026-04-13 21:05:09 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=146616) at 93.3% — possible encryption activity
+2026-04-13 21:05:09,472 WARNING [T1486] High CPU usage: python.exe (PID=146616) at 93.3% — possible encryption activity
+2026-04-13 21:16:29 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=92288) at 62.3% — possible encryption activity
+2026-04-13 21:16:29,339 WARNING [T1486] High CPU usage: python.exe (PID=92288) at 62.3% — possible encryption activity
+2026-04-13 21:39:24 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:26 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:27 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:28 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:28 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:28,956 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:29 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:29 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=146508) at 61.4% — possible encryption activity
+2026-04-13 21:39:29,384 WARNING [T1486] High CPU usage: python.exe (PID=146508) at 61.4% — possible encryption activity
+2026-04-13 21:39:30 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:31 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:31 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:32 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:33 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:34 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:35 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:36 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:36 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:37 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:38 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:38 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:39 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=146508) at 62.0% — possible encryption activity
+2026-04-13 21:39:39 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:39 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=142276) at 62.0% — possible encryption activity
+2026-04-13 21:39:39,782 WARNING [T1486] High CPU usage: python.exe (PID=142276) at 62.0% — possible encryption activity
+2026-04-13 21:39:52 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=146616) at 61.9% — possible encryption activity
+2026-04-13 21:39:52,743 WARNING [T1486] High CPU usage: python.exe (PID=146616) at 61.9% — possible encryption activity
+2026-04-13 21:40:13 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=146616) at 92.7% — possible encryption activity
+2026-04-13 21:40:13,159 WARNING [T1486] High CPU usage: python.exe (PID=146616) at 92.7% — possible encryption activity
+2026-04-13 21:40:22 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=142228) at 62.3% — possible encryption activity
+2026-04-13 21:40:22,630 WARNING [T1486] High CPU usage: python.exe (PID=142228) at 62.3% — possible encryption activity
+2026-04-13 21:40:34 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=142276) at 57.6% — possible encryption activity
+2026-04-13 21:40:34,318 WARNING [T1486] High CPU usage: python.exe (PID=142276) at 57.6% — possible encryption activity
+2026-04-13 21:40:35 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=146508) at 53.2% — possible encryption activity
+2026-04-13 21:40:35,289 WARNING [T1486] High CPU usage: python.exe (PID=146508) at 53.2% — possible encryption activity
+2026-04-13 21:40:35 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=146616) at 77.7% — possible encryption activity
+2026-04-13 21:40:35,421 WARNING [T1486] High CPU usage: python.exe (PID=146616) at 77.7% — possible encryption activity
+2026-04-13 21:40:45 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=142208) at 60.9% — possible encryption activity
+2026-04-13 21:40:45,620 WARNING [T1486] High CPU usage: python.exe (PID=142208) at 60.9% — possible encryption activity
+2026-04-13 21:41:07 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=142276) at 119.4% — possible encryption activity
+2026-04-13 21:41:07,883 WARNING [T1486] High CPU usage: python.exe (PID=142276) at 119.4% — possible encryption activity
+2026-04-22 20:57:19 [PROCESS ALERT] [T1486] High CPU usage: apconsvc.exe (PID=17856) at 59.7% — possible encryption activity
+2026-04-22 20:57:19,812 WARNING [T1486] High CPU usage: apconsvc.exe (PID=17856) at 59.7% — possible encryption activity
+2026-04-22 20:57:31 [PROCESS ALERT] [T1486] High CPU usage: msmpeng.exe (PID=3664) at 97.9% — possible encryption activity
+2026-04-22 20:57:31,625 WARNING [T1486] High CPU usage: msmpeng.exe (PID=3664) at 97.9% — possible encryption activity
+2026-04-22 20:57:38 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 20:57:38,410 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 20:57:51 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 62.0% — possible encryption activity
+2026-04-22 20:57:51,283 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 62.0% — possible encryption activity
+2026-04-22 20:58:10 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 61.8% — possible encryption activity
+2026-04-22 20:58:10,974 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 61.8% — possible encryption activity
+2026-04-22 20:58:22 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 60.5% — possible encryption activity
+2026-04-22 20:58:22,317 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 60.5% — possible encryption activity
+2026-04-22 20:58:27 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 62.2% — possible encryption activity
+2026-04-22 20:58:27,737 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 62.2% — possible encryption activity
+2026-04-22 20:59:20 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 62.0% — possible encryption activity
+2026-04-22 20:59:20,243 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 62.0% — possible encryption activity
+2026-04-22 20:59:21 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 41.1% — possible encryption activity
+2026-04-22 20:59:21,103 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 41.1% — possible encryption activity
+2026-04-22 20:59:39 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 151.6% — possible encryption activity
+2026-04-22 20:59:39,440 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 151.6% — possible encryption activity
+2026-04-22 20:59:42 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 61.9% — possible encryption activity
+2026-04-22 20:59:42,611 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 61.9% — possible encryption activity
+2026-04-22 21:00:03 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 108.4% — possible encryption activity
+2026-04-22 21:00:03,884 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 108.4% — possible encryption activity
+2026-04-22 21:00:37 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 92.7% — possible encryption activity
+2026-04-22 21:00:37,987 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 92.7% — possible encryption activity
+2026-04-22 21:00:52 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 61.7% — possible encryption activity
+2026-04-22 21:00:52,035 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 61.7% — possible encryption activity
+2026-04-22 21:00:53 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 107.9% — possible encryption activity
+2026-04-22 21:00:53,004 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 107.9% — possible encryption activity
+2026-04-22 21:00:59 [PROCESS ALERT] [T1486] High CPU usage: dumpcap.exe (PID=26128) at 123.4% — possible encryption activity
+2026-04-22 21:00:59,650 WARNING [T1486] High CPU usage: dumpcap.exe (PID=26128) at 123.4% — possible encryption activity
+2026-04-22 21:01:23 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 64.5% — possible encryption activity
+2026-04-22 21:01:23,731 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 64.5% — possible encryption activity
+2026-04-22 21:01:31 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 278.6% — possible encryption activity
+2026-04-22 21:01:31,620 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 278.6% — possible encryption activity
+2026-04-22 21:02:07 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 61.9% — possible encryption activity
+2026-04-22 21:02:07,190 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 61.9% — possible encryption activity
+2026-04-22 21:02:08 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 62.0% — possible encryption activity
+2026-04-22 21:02:08,053 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 62.0% — possible encryption activity
+2026-04-22 21:02:25 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 61.8% — possible encryption activity
+2026-04-22 21:02:25,514 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 61.8% — possible encryption activity
+2026-04-22 21:02:37 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 61.8% — possible encryption activity
+2026-04-22 21:02:37,308 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 61.8% — possible encryption activity
+2026-04-22 21:02:50 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 92.5% — possible encryption activity
+2026-04-22 21:02:50,753 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 92.5% — possible encryption activity
+2026-04-22 21:03:24 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 62.1% — possible encryption activity
+2026-04-22 21:03:24,675 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 62.1% — possible encryption activity
+2026-04-22 21:03:28 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 92.7% — possible encryption activity
+2026-04-22 21:03:28,643 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 92.7% — possible encryption activity
+2026-04-22 21:03:35 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 61.9% — possible encryption activity
+2026-04-22 21:03:35,825 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 61.9% — possible encryption activity
+2026-04-22 21:04:06 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 62.2% — possible encryption activity
+2026-04-22 21:04:06,368 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 62.2% — possible encryption activity
+2026-04-22 21:04:11 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 62.2% — possible encryption activity
+2026-04-22 21:04:11,941 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 62.2% — possible encryption activity
+2026-04-22 21:04:13 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 93.3% — possible encryption activity
+2026-04-22 21:04:13,609 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 93.3% — possible encryption activity
+2026-04-22 21:04:20 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:21 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:22 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:23 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:24 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:25 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:25 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:26 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:27 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:28 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:28 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:29 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:29 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:30 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:31 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:31 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:32 [PROCESS ALERT] [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:34 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 92.8% — possible encryption activity
+2026-04-22 21:04:34,823 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 92.8% — possible encryption activity
+2026-04-22 21:04:42 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 124.4% — possible encryption activity
+2026-04-22 21:04:42,006 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 124.4% — possible encryption activity
+2026-04-22 21:04:44 [PROCESS ALERT] [T1486] High CPU usage: memcompression (PID=2368) at 90.4% — possible encryption activity
+2026-04-22 21:04:44,980 WARNING [T1486] High CPU usage: memcompression (PID=2368) at 90.4% — possible encryption activity
+2026-04-22 21:05:16 [PROCESS ALERT] [T1486] High CPU usage: runtimebroker.exe (PID=29864) at 92.0% — possible encryption activity
+2026-04-22 21:05:16,247 WARNING [T1486] High CPU usage: runtimebroker.exe (PID=29864) at 92.0% — possible encryption activity
+2026-04-22 21:05:38 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 93.4% — possible encryption activity
+2026-04-22 21:05:38,814 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 93.4% — possible encryption activity
+2026-04-22 21:05:41 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 93.1% — possible encryption activity
+2026-04-22 21:05:41,409 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 93.1% — possible encryption activity
+2026-04-22 21:05:56 [PROCESS ALERT] [T1486] High CPU usage: phoneexperiencehost.exe (PID=5552) at 58.9% — possible encryption activity
+2026-04-22 21:05:56,390 WARNING [T1486] High CPU usage: phoneexperiencehost.exe (PID=5552) at 58.9% — possible encryption activity
+2026-04-22 21:06:07 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=20552) at 62.1% — possible encryption activity
+2026-04-22 21:06:18 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 92.6% — possible encryption activity
+2026-04-22 21:06:18,067 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 92.6% — possible encryption activity
+2026-04-22 21:06:25 [PROCESS ALERT] [T1486] High CPU usage: dumpcap.exe (PID=26128) at 61.9% — possible encryption activity
+2026-04-22 21:06:25,828 WARNING [T1486] High CPU usage: dumpcap.exe (PID=26128) at 61.9% — possible encryption activity
+2026-04-22 21:06:30 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 60.1% — possible encryption activity
+2026-04-22 21:06:30,621 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 60.1% — possible encryption activity
+2026-04-22 21:06:31 [PROCESS ALERT] [T1486] High CPU usage: webprot2.exe (PID=4012) at 49.0% — possible encryption activity
+2026-04-22 21:06:31,444 WARNING [T1486] High CPU usage: webprot2.exe (PID=4012) at 49.0% — possible encryption activity
+2026-04-22 21:07:01 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 96.0% — possible encryption activity
+2026-04-22 21:07:01,976 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 96.0% — possible encryption activity
+2026-04-22 21:07:04 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 42.1% — possible encryption activity
+2026-04-22 21:07:04,826 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 42.1% — possible encryption activity
+2026-04-22 21:07:06 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 92.5% — possible encryption activity
+2026-04-22 21:07:06,303 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 92.5% — possible encryption activity
+2026-04-22 21:07:06 [PROCESS ALERT] [T1486] High CPU usage: msmpeng.exe (PID=3664) at 79.5% — possible encryption activity
+2026-04-22 21:07:06,425 WARNING [T1486] High CPU usage: msmpeng.exe (PID=3664) at 79.5% — possible encryption activity
+2026-04-22 21:07:40 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 93.1% — possible encryption activity
+2026-04-22 21:07:40 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 92.3% — possible encryption activity
+2026-04-22 21:07:40,345 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 92.3% — possible encryption activity
+2026-04-22 21:07:55 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 77.1% — possible encryption activity
+2026-04-22 21:07:55,402 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 77.1% — possible encryption activity
+2026-04-22 21:08:09 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 61.0% — possible encryption activity
+2026-04-22 21:08:09,240 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 61.0% — possible encryption activity
+2026-04-22 21:08:31 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 123.8% — possible encryption activity
+2026-04-22 21:08:31,703 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 123.8% — possible encryption activity
+2026-04-22 21:08:32 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 87.9% — possible encryption activity
+2026-04-22 21:08:32,668 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 87.9% — possible encryption activity
+2026-04-22 21:09:06 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 62.3% — possible encryption activity
+2026-04-22 21:09:06,051 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 62.3% — possible encryption activity
+2026-04-22 21:09:15 [PROCESS ALERT] [T1486] High CPU usage: dumpcap.exe (PID=26128) at 62.1% — possible encryption activity
+2026-04-22 21:09:15,368 WARNING [T1486] High CPU usage: dumpcap.exe (PID=26128) at 62.1% — possible encryption activity
+2026-04-22 21:09:16 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 93.1% — possible encryption activity
+2026-04-22 21:09:16,135 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 93.1% — possible encryption activity
+2026-04-22 21:09:39 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 92.9% — possible encryption activity
+2026-04-22 21:09:39,743 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 92.9% — possible encryption activity
+2026-04-22 21:09:42 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 61.8% — possible encryption activity
+2026-04-22 21:09:42,035 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 61.8% — possible encryption activity
+2026-04-22 21:10:11 [PROCESS ALERT] [T1486] High CPU usage: tshark.exe (PID=30596) at 92.8% — possible encryption activity
+2026-04-22 21:10:11,965 WARNING [T1486] High CPU usage: tshark.exe (PID=30596) at 92.8% — possible encryption activity
+2026-04-22 21:10:13 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 92.7% — possible encryption activity
+2026-04-22 21:10:13,787 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 92.7% — possible encryption activity
+2026-04-22 21:10:21 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 60.8% — possible encryption activity
+2026-04-22 21:10:21,392 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 60.8% — possible encryption activity
+2026-04-22 21:10:30 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 61.7% — possible encryption activity
+2026-04-22 21:10:30,052 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 61.7% — possible encryption activity
+2026-04-22 21:10:51 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 62.0% — possible encryption activity
+2026-04-22 21:10:51,167 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 62.0% — possible encryption activity
+2026-04-22 21:10:55 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 81.6% — possible encryption activity
+2026-04-22 21:10:55,006 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 81.6% — possible encryption activity
+2026-04-22 21:11:16 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 93.1% — possible encryption activity
+2026-04-22 21:11:16,177 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 93.1% — possible encryption activity
+2026-04-22 21:11:19 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 91.0% — possible encryption activity
+2026-04-22 21:11:19,872 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 91.0% — possible encryption activity
+2026-04-22 21:11:46 [PROCESS ALERT] [T1486] High CPU usage: modvie~1.exe (PID=4392) at 53.6% — possible encryption activity
+2026-04-22 21:11:46,224 WARNING [T1486] High CPU usage: modvie~1.exe (PID=4392) at 53.6% — possible encryption activity
+2026-04-22 21:12:06 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 122.8% — possible encryption activity
+2026-04-22 21:12:06,015 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 122.8% — possible encryption activity
+2026-04-22 21:12:23 [PROCESS ALERT] [T1486] High CPU usage: notion.exe (PID=21804) at 61.8% — possible encryption activity
+2026-04-22 21:12:23,255 WARNING [T1486] High CPU usage: notion.exe (PID=21804) at 61.8% — possible encryption activity
+2026-04-22 21:12:28 [PROCESS ALERT] [T1486] High CPU usage: cxmonsvc.exe (PID=3684) at 48.2% — possible encryption activity
+2026-04-22 21:12:28,465 WARNING [T1486] High CPU usage: cxmonsvc.exe (PID=3684) at 48.2% — possible encryption activity
+2026-04-22 21:12:35 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 61.9% — possible encryption activity
+2026-04-22 21:12:35,741 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 61.9% — possible encryption activity
+2026-04-22 21:12:49 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 93.3% — possible encryption activity
+2026-04-22 21:12:49,838 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 93.3% — possible encryption activity
+2026-04-22 21:13:22 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 123.6% — possible encryption activity
+2026-04-22 21:13:22,523 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 123.6% — possible encryption activity
+2026-04-22 21:13:28 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 93.3% — possible encryption activity
+2026-04-22 21:13:28,304 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 93.3% — possible encryption activity
+2026-04-22 21:13:45 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 59.0% — possible encryption activity
+2026-04-22 21:13:45,951 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 59.0% — possible encryption activity
+2026-04-22 21:13:50 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 93.2% — possible encryption activity
+2026-04-22 21:13:50,241 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 93.2% — possible encryption activity
+2026-04-22 21:14:14 [PROCESS ALERT] [T1486] High CPU usage: octacore.exe (PID=11260) at 50.4% — possible encryption activity
+2026-04-22 21:14:14,656 WARNING [T1486] High CPU usage: octacore.exe (PID=11260) at 50.4% — possible encryption activity
+2026-04-22 21:14:38 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 62.3% — possible encryption activity
+2026-04-22 21:14:38,749 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 62.3% — possible encryption activity
+2026-04-22 21:14:43 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=3468) at 92.7% — possible encryption activity
+2026-04-22 21:14:43,772 WARNING [T1486] High CPU usage: python.exe (PID=3468) at 92.7% — possible encryption activity
+2026-04-22 21:14:47 [PROCESS ALERT] [T1486] High CPU usage: fastscn.exe (PID=12784) at 62.0% — possible encryption activity
+2026-04-22 21:14:47,321 WARNING [T1486] High CPU usage: fastscn.exe (PID=12784) at 62.0% — possible encryption activity
+2026-04-22 21:14:53 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 94.3% — possible encryption activity
+2026-04-22 21:14:53,963 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 94.3% — possible encryption activity
+2026-04-22 21:15:13 [PROCESS ALERT] [T1486] High CPU usage: apconsvc.exe (PID=17856) at 50.5% — possible encryption activity
+2026-04-22 21:15:13,918 WARNING [T1486] High CPU usage: apconsvc.exe (PID=17856) at 50.5% — possible encryption activity
+2026-04-22 21:15:16 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 212.4% — possible encryption activity
+2026-04-22 21:15:16,209 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 212.4% — possible encryption activity
+2026-04-22 21:15:20 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 83.1% — possible encryption activity
+2026-04-22 21:15:20,409 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 83.1% — possible encryption activity
+2026-04-22 21:15:45 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 92.8% — possible encryption activity
+2026-04-22 21:15:45,416 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 92.8% — possible encryption activity
+2026-04-22 21:16:27 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 92.8% — possible encryption activity
+2026-04-22 21:16:27,816 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 92.8% — possible encryption activity
+2026-04-22 21:16:38 [PROCESS ALERT] [T1486] High CPU usage: memcompression (PID=2368) at 242.6% — possible encryption activity
+2026-04-22 21:16:38,319 WARNING [T1486] High CPU usage: memcompression (PID=2368) at 242.6% — possible encryption activity
+2026-04-22 21:16:48 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 93.2% — possible encryption activity
+2026-04-22 21:16:48,750 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 93.2% — possible encryption activity
+2026-04-22 21:17:05 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 59.5% — possible encryption activity
+2026-04-22 21:17:05,347 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 59.5% — possible encryption activity
+2026-04-22 21:17:27 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 86.0% — possible encryption activity
+2026-04-22 21:17:28 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=28484) at 93.5% — possible encryption activity
+2026-04-22 21:17:28,600 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 93.5% — possible encryption activity
+2026-04-22 21:17:46 [PROCESS ALERT] [T1486] High CPU usage: npav4.exe (PID=19516) at 93.1% — possible encryption activity
+2026-04-22 21:17:46,382 WARNING [T1486] High CPU usage: npav4.exe (PID=19516) at 93.1% — possible encryption activity
+2026-04-22 21:17:50 [PROCESS ALERT] [T1486] High CPU usage: python.exe (PID=2252) at 61.9% — possible encryption activity
+2026-04-22 21:17:50,537 WARNING [T1486] High CPU usage: python.exe (PID=2252) at 61.9% — possible encryption activity

@@ -1,0 +1,76 @@
+2026-04-13 21:04:10,366 INFO File monitor started on E:\Desktop\CN\monitoring\..\test_files
+2026-04-13 21:15:54,988 INFO File monitor stopped
+2026-04-13 21:16:06,496 INFO File monitor started on E:\Desktop\CN\monitoring\..\test_files
+2026-04-13 21:38:51,229 INFO File monitor stopped
+2026-04-13 21:38:54,777 INFO File monitor started on E:\Desktop\CN\monitoring\..\test_files
+2026-04-13 21:39:24,640 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:26,435 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:27,492 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:28,205 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:29,043 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:30,227 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:31,014 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:31,684 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:32,488 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:33,192 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:34,216 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:35,117 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:36,089 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:36,907 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:37,665 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:38,310 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:38,891 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:39,202 WARNING [T1486] High CPU usage: python.exe (PID=146508) at 62.0% — possible encryption activity
+2026-04-13 21:39:39,430 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-13 21:39:39,623 INFO New incident opened: INC-20260413213939-19216881246 for IP=192.168.81.246 [MEDIUM]
+2026-04-13 21:39:39,624 INFO [CORRELATOR] 192.168.81.246 \u2192 MEDIUM | Suspicious activity — process layer only | signals=Proc(19 alerts) | host_risk=5.0
+2026-04-13 21:39:39,625 WARNING [MEDIUM] | incident=INC-20260413213939-19216881246 | IP=192.168.81.246 | score=9.6 | confidence=24% | host_risk=5.0 | reason=Suspicious activity — process layer only | signals=Proc(19 alerts) | host_risk=5.0
+2026-04-13 21:39:39,626 WARNING 2026-04-13 21:39:39 [RESPONSE] action=FLAG_FOR_REVIEW | target=192.168.81.246 | reason=Medium severity event — manual review recommended (INC-20260413213939-19216881246)
+2026-04-13 21:40:01,219 INFO New incident opened: INC-20260413214001-131071393 for IP=13.107.13.93 [MEDIUM]
+2026-04-13 21:40:01,219 INFO [CORRELATOR] 13.107.13.93 \u2192 MEDIUM | Suspicious activity — network layer only | signals=Net(3) | host_risk=3.0
+2026-04-13 21:40:01,219 WARNING [MEDIUM] | incident=INC-20260413214001-131071393 | IP=13.107.13.93 | score=6.4 | confidence=16% | host_risk=3.0 | reason=Suspicious activity — network layer only | signals=Net(3) | host_risk=3.0
+2026-04-13 21:40:01,220 INFO [RESPONSE] No automated action for LOW severity event on 13.107.13.93
+2026-04-13 21:41:08,481 INFO File monitor stopped
+2026-04-13 21:41:08,606 INFO Packet capture stopped by user
+2026-04-13 21:41:08,608 INFO Network features saved to data/network_features.csv
+2026-04-13 21:41:39,949 INFO Network features saved to data/network_features.csv
+2026-04-22 20:57:05,054 INFO File monitor started on E:\Desktop\CN\monitoring\..\test_files
+2026-04-22 21:04:20,175 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:21,327 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:22,675 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:23,575 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:24,318 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:25,047 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:25,991 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:26,694 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:27,478 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:28,054 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:28,683 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:29,227 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:29,974 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:30,572 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:31,212 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:31,785 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:32,379 WARNING [T1059] Process spawn burst: 7 new processes in 5s
+2026-04-22 21:04:32,975 INFO New incident opened: INC-20260422210432-7417823229 for IP=74.178.232.29 [MEDIUM]
+2026-04-22 21:04:32,976 INFO [CORRELATOR] 74.178.232.29 \u2192 MEDIUM | Suspicious activity — process layer only | signals=Proc(17 alerts) | host_risk=5.0
+2026-04-22 21:04:32,977 WARNING [MEDIUM] | incident=INC-20260422210432-7417823229 | IP=74.178.232.29 | score=9.6 | confidence=24% | host_risk=5.0 | reason=Suspicious activity — process layer only | signals=Proc(17 alerts) | host_risk=5.0
+2026-04-22 21:04:32,979 WARNING 2026-04-22 21:04:32 [RESPONSE] action=FLAG_FOR_REVIEW | target=74.178.232.29 | reason=Medium severity event — manual review recommended (INC-20260422210432-7417823229)
+2026-04-22 21:06:07,153 WARNING [T1486] High CPU usage: python.exe (PID=20552) at 62.1% — possible encryption activity
+2026-04-22 21:06:09,695 INFO [CORRELATOR] 74.178.232.29 \u2192 MEDIUM | Suspicious activity — process layer only | signals=Proc(1 alerts) | host_risk=10.0
+2026-04-22 21:06:09,696 WARNING [MEDIUM] | incident=INC-20260422210432-7417823229 | IP=74.178.232.29 | score=9.6 | confidence=24% | host_risk=10.0 | reason=Suspicious activity — process layer only | signals=Proc(1 alerts) | host_risk=10.0
+2026-04-22 21:06:09,704 WARNING 2026-04-22 21:06:09 [RESPONSE] action=FLAG_FOR_REVIEW | target=74.178.232.29 | reason=Medium severity event — manual review recommended (INC-20260422210432-7417823229)
+2026-04-22 21:07:40,322 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 93.1% — possible encryption activity
+2026-04-22 21:07:40,812 INFO [CORRELATOR] 74.178.232.29 \u2192 MEDIUM | Suspicious activity — process layer only | signals=Proc(1 alerts) | host_risk=15.0
+2026-04-22 21:07:40,812 WARNING [MEDIUM] | incident=INC-20260422210432-7417823229 | IP=74.178.232.29 | score=9.6 | confidence=24% | host_risk=15.0 | reason=Suspicious activity — process layer only | signals=Proc(1 alerts) | host_risk=15.0
+2026-04-22 21:07:40,814 WARNING 2026-04-22 21:07:40 [RESPONSE] action=FLAG_FOR_REVIEW | target=74.178.232.29 | reason=Medium severity event — manual review recommended (INC-20260422210432-7417823229)
+2026-04-22 21:09:24,669 INFO [CORRELATOR] 74.178.232.29 \u2192 CLEAN | No threat indicators detected | signals=none | host_risk=15.0
+2026-04-22 21:14:35,514 INFO [CORRELATOR] 74.178.232.29 \u2192 CLEAN | No threat indicators detected | signals=none | host_risk=15.0
+2026-04-22 21:15:38,805 INFO [CORRELATOR] 74.178.232.29 \u2192 CLEAN | No threat indicators detected | signals=none | host_risk=15.0
+2026-04-22 21:17:27,320 WARNING [T1486] High CPU usage: python.exe (PID=28484) at 86.0% — possible encryption activity
+2026-04-22 21:17:27,870 INFO [CORRELATOR] 74.178.232.29 \u2192 MEDIUM | Suspicious activity — process layer only | signals=Proc(1 alerts) | host_risk=20.0
+2026-04-22 21:17:27,871 WARNING [MEDIUM] | incident=INC-20260422210432-7417823229 | IP=74.178.232.29 | score=9.6 | confidence=24% | host_risk=20.0 | reason=Suspicious activity — process layer only | signals=Proc(1 alerts) | host_risk=20.0
+2026-04-22 21:17:27,871 WARNING 2026-04-22 21:17:27 [RESPONSE] action=FLAG_FOR_REVIEW | target=74.178.232.29 | reason=Medium severity event — manual review recommended (INC-20260422210432-7417823229)
+2026-04-22 21:17:52,687 INFO File monitor stopped
+2026-04-22 21:17:52,766 INFO Packet capture stopped by user
+2026-04-22 21:17:52,768 INFO Network features saved to data/network_features.csv

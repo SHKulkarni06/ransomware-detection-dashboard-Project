@@ -1,21 +1,30 @@
-pyshark 
-pandas 
-numpy 
-scikit-learn 
-matplotlib
-tabulate
-psutil
-dash>=2.9
-plotly
-joblib
-watchdog
-dash 
-pandas 
-psutil 
-plotly 
-scikit-learn 
-joblib 
-numpy 
-watchdog 
-scapy 
-pywin32
+# EDR System — Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Network capture
+pyshark>=0.6
+
+# Data processing
+pandas>=2.0
+numpy>=1.24
+
+# Machine learning
+scikit-learn>=1.3
+joblib>=1.3
+
+# File monitoring
+watchdog>=3.0
+
+# Process monitoring
+psutil>=5.9
+
+# Dashboard
+dash>=2.14
+plotly>=5.18
+
+# Network (alternative capture, Windows)
+scapy>=2.5
+pywin32>=306  ; sys_platform == 'win32'
+
+# Utilities
+tabulate>=0.9

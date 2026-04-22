@@ -1,35 +1,57 @@
+"""
+features/feature_extractor.py
+==============================
+Stateful network feature aggregator.
+
+Consumes raw PyShark packets and maintains per-source-IP
+traffic statistics. Exposes get_summary() for detection modules
+and save_features_to_csv() for persistence on shutdown.
+"""
+
+import csv
+import os
+import logging
 from collections import defaultdict
 from datetime import datetime
-import csv
-import sys
-import os
+from typing import Dict, List
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-from core.security_event import SecurityEvent
+logger = logging.getLogger(__name__)
 
-# Store behavior per source IP
-traffic_stats = defaultdict(lambda: {
+# ------------------------------------------------------------------ #
+# In-memory traffic stats (reset on process restart)                   #
+# ------------------------------------------------------------------ #
+# Structure per IP:
+#   packet_count, total_bytes, protocols (set),
+#   first_seen (datetime), last_seen (datetime)
+
+_traffic_stats: Dict[str, dict] = defaultdict(lambda: {
     "packet_count": 0,
     "total_bytes": 0,
     "protocols": set(),
     "first_seen": None,
-    "last_seen": None
+    "last_seen": None,
 })
 
-def extract_features(packet):
+
+# ------------------------------------------------------------------ #
+# Feature extraction                                                   #
+# ------------------------------------------------------------------ #
+
+def extract_features(packet) -> None:
     """
-    Extract real-time features from live PyShark packet
+    Parse a single PyShark packet and update the IP stats table.
+    Silently drops packets without an IP layer.
     """
     try:
         if not hasattr(packet, "ip"):
             return
 
-        src_ip = packet.ip.src
-        protocol = packet.highest_layer
-        size = int(packet.length)
-        now = datetime.now()
+        src_ip: str = packet.ip.src
+        protocol: str = packet.highest_layer
+        size: int = int(packet.length)
+        now: datetime = datetime.now()
 
-        stats = traffic_stats[src_ip]
+        stats = _traffic_stats[src_ip]
 
         if stats["first_seen"] is None:
             stats["first_seen"] = now
@@ -39,21 +61,32 @@ def extract_features(packet):
         stats["protocols"].add(protocol)
         stats["last_seen"] = now
 
-    except Exception:
-        pass
+    except Exception as exc:
+        logger.debug(f"Feature extraction error: {exc}")
 
 
-def get_summary():
+# ------------------------------------------------------------------ #
+# Summary for detection modules                                        #
+# ------------------------------------------------------------------ #
+
+def get_summary() -> List[dict]:
     """
-    Returns live traffic behavior summary
+    Compute derived metrics for every tracked IP.
+
+    Returns a list of feature dicts:
+        ip, packet_count, avg_packet_size,
+        packet_rate (pkts/sec), protocols (list),
+        first_seen, last_seen
     """
     summaries = []
 
-    for ip, stats in traffic_stats.items():
-        duration = (
-            (stats["last_seen"] - stats["first_seen"]).total_seconds()
-            if stats["first_seen"] and stats["last_seen"]
-            else 1
+    for ip, stats in _traffic_stats.items():
+        if stats["first_seen"] is None:
+            continue
+
+        duration = max(
+            (stats["last_seen"] - stats["first_seen"]).total_seconds(),
+            1  # avoid division by zero for single-packet bursts
         )
 
         avg_size = stats["total_bytes"] / stats["packet_count"]
@@ -63,46 +96,46 @@ def get_summary():
             "ip": ip,
             "packet_count": stats["packet_count"],
             "avg_packet_size": round(avg_size, 2),
-            "packet_rate": round(packet_rate, 2),
+            "packet_rate": round(packet_rate, 4),
             "protocols": list(stats["protocols"]),
             "first_seen": stats["first_seen"],
-            "last_seen": stats["last_seen"]
+            "last_seen": stats["last_seen"],
         })
 
     return summaries
 
 
-def save_features_to_csv(filename="data/network_features.csv"):
+# ------------------------------------------------------------------ #
+# CSV persistence                                                      #
+# ------------------------------------------------------------------ #
+
+def save_features_to_csv(filename: str = "data/network_features.csv") -> None:
     """
-    Save learned behavior to CSV on exit
+    Save aggregated traffic stats to CSV.
+    Called on graceful shutdown of the capture module.
     """
-    os.makedirs("data", exist_ok=True)
+    os.makedirs(os.path.dirname(filename) or ".", exist_ok=True)
 
     sorted_ips = sorted(
-        traffic_stats.items(),
+        _traffic_stats.items(),
         key=lambda x: x[1]["packet_count"],
-        reverse=True
+        reverse=True,
     )
 
-    with open(filename, mode="w", newline="") as file:
-        writer = csv.writer(file)
+    with open(filename, mode="w", newline="") as fh:
+        writer = csv.writer(fh)
         writer.writerow([
-            "Source IP",
-            "Packet Count",
-            "Average Packet Size",
-            "Packet Rate",
-            "Protocols Used",
-            "First Seen",
-            "Last Seen"
+            "source_ip", "packet_count", "avg_packet_size_bytes",
+            "packet_rate_per_sec", "protocols", "first_seen", "last_seen"
         ])
 
         for ip, stats in sorted_ips:
-            duration = (
-                (stats["last_seen"] - stats["first_seen"]).total_seconds()
-                if stats["first_seen"] and stats["last_seen"]
-                else 1
-            )
+            if stats["first_seen"] is None:
+                continue
 
+            duration = max(
+                (stats["last_seen"] - stats["first_seen"]).total_seconds(), 1
+            )
             avg_size = stats["total_bytes"] / stats["packet_count"]
             packet_rate = stats["packet_count"] / duration
 
@@ -110,10 +143,11 @@ def save_features_to_csv(filename="data/network_features.csv"):
                 ip,
                 stats["packet_count"],
                 round(avg_size, 2),
-                round(packet_rate, 2),
+                round(packet_rate, 4),
                 ",".join(stats["protocols"]),
-                stats["first_seen"],
-                stats["last_seen"]
+                stats["first_seen"].strftime("%Y-%m-%d %H:%M:%S"),
+                stats["last_seen"].strftime("%Y-%m-%d %H:%M:%S"),
             ])
 
+    logger.info(f"Network features saved to {filename}")
     print(f"[+] Features saved to {filename}")

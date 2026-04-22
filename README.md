@@ -1,94 +1,233 @@
-<<<<<<< HEAD
-# Early Ransomware Detection Using Network Traffic and Machine Learning
+# EDR — Early Ransomware Detection System
 
-## Project Overview
-This project aims to detect ransomware **at an early stage** by monitoring **network traffic behavior** instead of scanning files. Ransomware often communicates with external servers before encrypting files, and abnormal network behavior can be detected early using a hybrid approach of **rule-based logic** and **machine learning (Isolation Forest)**.  
-
-This approach allows real-time detection and preventive action before files are encrypted, making it suitable for modern network security environments.
+> A production-grade Behavioural Endpoint Detection & Response (EDR) system
+> built in Python. Suitable for internship portfolios, placements, and
+> real-world deployment.
 
 ---
 
-## Key Features
-- Early ransomware detection at the network level  
-- Hybrid detection: Rule-based + Machine Learning  
-- Risk scoring and explainable alerts  
-- Permission-based preventive actions (block suspicious traffic)  
-- Real-time monitoring and logging  
-- Optional visualization of network traffic and anomalies  
+## Architecture
 
----
-
-## Technologies Used
-- **Python 3.x** – Core programming language  
-- **PyShark** – Live network packet capture  
-- **Wireshark** – Packet analysis and validation  
-- **Pandas & NumPy** – Data processing and feature extraction  
-- **Scikit-learn** – Machine learning (Isolation Forest)  
-- **Matplotlib / Streamlit** – Visualization (optional)  
-- **Python logging module** – Event logging and reporting  
-
----
-
-## Project Structure
-Early-Ransomware-Detection/
+```
+edr_system/
 │
-├── data/ # Datasets, captured packets
-├── capture/ # Packet capture scripts
-├── features/ # Feature extraction logic
-├── detection/ # Rule-based + ML detection
-├── models/ # Trained ML models
-├── logs/ # Log files
-├── visualization/ # Graphs and dashboards (optional)
-├── main.py # Project entry point
-└── README.md # Project explanation
-
+├── core/
+│   ├── security_event.py     # Unified event data model (all detections)
+│   └── logger.py             # Centralised logging config
+│
+├── features/
+│   └── feature_extractor.py  # Per-IP traffic stats from live packets
+│
+├── detection/
+│   ├── detector.py           # Rule-based + IOC network analysis
+│   └── correlator.py         # Multi-signal correlation + incident grouping
+│
+├── ml/
+│   └── anomaly_model.py      # Isolation Forest anomaly detection
+│
+├── monitoring/
+│   ├── file_monitor.py       # Watchdog file system monitor
+│   └── process_monitor.py    # psutil process behaviour monitor
+│
+├── threat_intel/
+│   └── ioc_checker.py        # IP threat intelligence / IOC lookup
+│
+├── response/
+│   └── response_engine.py    # Simulated block_ip / kill_process / quarantine
+│
+├── dashboard/
+│   └── dash_ui.py            # Dash SOC dashboard (auto-refreshes every 5s)
+│
+├── capture/
+│   └── capture_packets.py    # Live packet capture — main pipeline loop
+│
+├── run_project.py            # Master launcher
+├── requirements.txt
+└── README.md
+```
 
 ---
 
-## How it Works
-1. Capture live network traffic using PyShark  
-2. Extract key features such as packet size, connection frequency, encrypted traffic, and unknown IPs  
-3. Clean and normalize the data  
-4. Apply rule-based detection for fast alerts  
-5. Apply Isolation Forest to detect anomalies  
-6. Generate a risk score and classify activity (Low / Medium / High)  
-7. Raise alert and explain reason  
-8. Ask user/admin permission to block suspicious traffic  
-9. Log all events for auditing and analysis  
+## Detection Pipeline
+
+```
+Live Packet
+    │
+    ▼
+Feature Extractor  ─── per-IP stats (rate, size, protocols)
+    │
+    ▼
+Rule Engine  ───────── high rate / large packets / suspicious proto
+    │
+    ├──► IOC Checker ─ match against known-bad IPs → score boost
+    │
+    ├──► ML Model ──── Isolation Forest anomaly score
+    │
+    ├──► File Monitor ─ mass changes / ransomware extensions
+    │
+    └──► Proc Monitor ─ vssadmin / bcdedit / CPU burst
+           │
+           ▼
+       Correlator  ──── weighted multi-signal score → severity
+           │
+           ▼
+      Response Engine ── block_ip / kill_process / quarantine_file
+           │
+           ▼
+      SOC Dashboard  ──── live Dash UI at http://127.0.0.1:8050
+```
 
 ---
 
-## Getting Started
+## Detection Features
 
-1. Clone this repository (private, for practice):
+| Layer | Rule | MITRE |
+|-------|------|-------|
+| Network | High packet rate (>20/s) | T1046 |
+| Network | Large avg packet size (>1000B) | T1041 |
+| Network | TLS/SSL/QUIC traffic | T1071.001 |
+| Network | IOC threat intel match | T1071 |
+| File | Mass file modifications (≥20/min) | T1486 |
+| File | Ransomware extensions (.locked, .enc…) | T1486 |
+| Process | Ransomware CLI (vssadmin, bcdedit…) | T1059 |
+| Process | Script host in TEMP/AppData | T1059 |
+| Process | Process spawn burst (>6 in 5s) | T1059 |
+| Process | Abnormal CPU usage (>40%) | T1486 |
+
+---
+
+## Correlation Severity Rules
+
+| Signals triggered | Severity |
+|---|---|
+| 3 (network + file + process) | **CRITICAL** |
+| 2 any combination | **HIGH** |
+| 1 | **MEDIUM** |
+| 0 | CLEAN |
+
+Weighted scoring: network=3, file=4, process=5
+
+---
+
+## Bonus Features Implemented
+
+- **Host risk scoring** — cumulative risk per IP tracked over time
+- **Behaviour stabilisation** — risk score decays after 5 clean cycles
+- **Incident grouping** — events within 15 minutes grouped under one `INC-*` ID
+- **Risk heatmap** — visual host risk in dashboard
+- **Timeline tracking** — incident open time + event count
+
+---
+
+## Quick Start
+
+### 1. Install dependencies
+
 ```bash
-git clone https://github.com/SHKulkarni06/Early-Ransomware-Detection-
-Navigate to project folder and create a virtual environment:
+pip install -r requirements.txt
+```
 
-cd Early-Ransomware-Detection
-python -m venv venv
-venv\Scripts\activate
-Install required packages:
+### 2. Configure network interface
 
-pip install pyshark pandas numpy scikit-learn matplotlib
-Run main program:
+Edit `capture/capture_packets.py` and set `INTERFACE`:
 
-python main.py
-Future Enhancements
-Add a dashboard using Streamlit for live visualization
+```python
+# Windows example:
+INTERFACE = r"\Device\NPF_{YOUR-GUID-HERE}"
 
-Implement adaptive thresholds for dynamic anomaly detection
+# Linux / macOS:
+INTERFACE = "eth0"
+```
 
-Integrate with MITRE ATT&CK framework for advanced threat classification
+Find your interface name in **Wireshark → Capture → Interfaces**.
 
-Author
-Sanchita Kulkarni
+### 3. Run dashboard only (no capture required)
 
-Email / LinkedIn: sanchitakulkarni28@gmail.com
+```bash
+python run_project.py --dashboard
+```
 
+Open `http://127.0.0.1:8050`
 
-# Early-Ransomware-Detection-
-Early Ransomware Detection using Network Traffic &amp; ML
-=======
-# ransomware-detection-dashboard-Project
->>>>>>> a887160358b557516a77d0cfb398baa5d402e55c
+### 4. Run the full system
+
+```bash
+# Windows — run as Administrator (required for packet capture)
+python run_project.py
+
+# Linux
+sudo python run_project.py
+```
+
+### 5. Simulate alerts (test without live traffic)
+
+```bash
+python generate_real_alerts.py
+```
+
+---
+
+## Log Files
+
+| File | Contents |
+|------|----------|
+| `logs/system.log` | All structured detection events |
+| `logs/file_system.log` | File create/modify/delete events |
+| `logs/process_system.log` | Process behaviour alerts |
+| `logs/response_actions.log` | All automated response actions |
+
+---
+
+## SecurityEvent Schema
+
+Every detection returns a `SecurityEvent` with:
+
+```python
+{
+    "timestamp":       "2024-01-01 12:00:00",
+    "source":          "network | file | process",
+    "event_type":      "network_behavior_anomaly | ...",
+    "host":            "192.168.1.5",
+    "user":            "SYSTEM",
+    "mitre_technique": "T1486",
+    "tactic":          "Impact",
+    "impact":          8,            # 1–10
+    "confidence":      85.0,         # %
+    "risk_score":      6.8,          # impact × (confidence/10)
+    "severity":        "HIGH",       # LOW | MEDIUM | HIGH | CRITICAL
+    "details":         { ... }       # raw evidence dict
+}
+```
+
+---
+
+## Interview Talking Points
+
+### Why Isolation Forest?
+- Unsupervised — no labelled ransomware dataset required
+- Learns "normal" baseline from the first 20 packets
+- Efficient on high-dimensional feature vectors
+- Low false-positive rate at contamination=0.03
+
+### Why multi-signal correlation?
+- Ransomware triggers multiple independent signals simultaneously
+- Combining network + file + process reduces single-source false positives
+- Weighted scoring reflects realistic threat impact (process = highest weight)
+
+### Why behaviour-based detection?
+- Signature-based AV misses novel/polymorphic ransomware
+- Ransomware behaviour (mass file rename, C2 contact, vssadmin) is invariant
+- Detects at pre-encryption stage (network C2) — earlier than file-level tools
+
+### MITRE ATT&CK mapping
+- T1486 — Data Encrypted for Impact (ransomware hallmark)
+- T1041 — Exfiltration Over C2 Channel
+- T1059 — Command and Scripting Interpreter
+- T1071 — Application Layer Protocol (C2 communication)
+
+---
+
+## Author
+
+Sanchita Kulkarni  
+Email: sanchitakulkarni28@gmail.com
